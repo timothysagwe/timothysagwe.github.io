@@ -1,4 +1,5 @@
 ---
+import { Icon } from "astro-icon/components";
 import SocialList from "@/components/SocialList.astro";
 import PageLayout from "@/layouts/Base.astro";
 
@@ -105,21 +106,34 @@ const skills = [
 	</section>
 
 	<section>
-		<h2 class="title mb-4 text-xl">Get in Touch</h2>
-		<p class="text-sm">
-			Open to new opportunities and collaboration. Reach me at{" "}
-			<a class="cactus-link" href="mailto:timothysagwe@icloud.com">
-				timothysagwe@icloud.com
-			</a>{" "}
-			or connect on{" "}
+		<h2 class="title mb-6 text-xl">Get in Touch</h2>
+		<p class="mb-6 text-sm">Open to new opportunities and collaboration.</p>
+		<div class="flex flex-col gap-3 sm:flex-row sm:gap-6">
 			<a
-				class="cactus-link"
+				class="hover:text-accent flex items-center gap-2 text-sm transition-colors"
+				href="mailto:timothysagwe@icloud.com"
+			>
+				<Icon aria-hidden="true" class="h-5 w-5 shrink-0" name="mdi:email-outline" />
+				timothysagwe@icloud.com
+			</a>
+			<a
+				class="hover:text-accent flex items-center gap-2 text-sm transition-colors"
 				href="https://www.linkedin.com/in/timothysagwe"
 				rel="noreferrer"
 				target="_blank"
 			>
-				LinkedIn
-			</a>.
-		</p>
+				<Icon aria-hidden="true" class="h-5 w-5 shrink-0" name="mdi:linkedin" />
+				linkedin.com/in/timothysagwe
+			</a>
+			<a
+				class="hover:text-accent flex items-center gap-2 text-sm transition-colors"
+				href="https://github.com/timothysagwe"
+				rel="noreferrer"
+				target="_blank"
+			>
+				<Icon aria-hidden="true" class="h-5 w-5 shrink-0" name="mdi:github" />
+				github.com/timothysagwe
+			</a>
+		</div>
 	</section>
 </PageLayout>
