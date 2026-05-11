@@ -6,14 +6,13 @@ const meta = {
 	title: "Projects",
 };
 
-const projects = [
+const projects: { title: string; description: string; tech: string[]; demo?: string; highlights: string[] }[] = [
 	{
 		title: "GRC Platform",
 		description:
 			"A browser-based Governance, Risk & Compliance platform built with vanilla JavaScript. Includes a risk register, controls library, compliance checklists, incident tracking, and a live dashboard with charts.",
 		tech: ["JavaScript", "HTML", "CSS", "Chart.js", "LocalStorage"],
 		demo: "https://timothysagwe.github.io/grc-platform/",
-		github: "https://github.com/timothysagwe/grc-platform",
 		highlights: [
 			"Risk register with severity scoring and ownership tracking",
 			"Controls management mapped to compliance frameworks",
@@ -33,28 +32,16 @@ const projects = [
 				<article class="border-accent rounded-lg border p-6">
 					<div class="mb-4 flex flex-wrap items-start justify-between gap-4">
 						<h2 class="text-xl font-bold">{project.title}</h2>
-						<div class="flex gap-4 text-sm">
-							{project.demo && (
-								<a
-									class="cactus-link font-semibold"
-									href={project.demo}
-									rel="noreferrer"
-									target="_blank"
-								>
-									Live Demo →
-								</a>
-							)}
-							{project.github && (
-								<a
-									class="cactus-link"
-									href={project.github}
-									rel="noreferrer"
-									target="_blank"
-								>
-									GitHub
-								</a>
-							)}
-						</div>
+						{project.demo && (
+							<a
+								class="cactus-link text-sm font-semibold"
+								href={project.demo}
+								rel="noreferrer"
+								target="_blank"
+							>
+								Live Demo →
+							</a>
+						)}
 					</div>
 					<p class="mb-4 text-sm">{project.description}</p>
 					<ul class="mb-4 list-inside list-disc space-y-1 text-sm" role="list">
