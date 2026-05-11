@@ -1,0 +1,63 @@
+---
+import PageLayout from "@/layouts/Base.astro";
+
+const meta = {
+	description: "Projects built by Timothy Sagwe — GRC, cybersecurity, and web development.",
+	title: "Projects",
+};
+
+const projects = [
+	{
+		title: "GRC Platform",
+		description:
+			"A browser-based Governance, Risk & Compliance platform built with vanilla JavaScript. Includes a risk register, controls library, compliance checklists, incident tracking, and a live dashboard with charts.",
+		tech: ["JavaScript", "HTML", "CSS", "Chart.js", "LocalStorage"],
+		github: "https://github.com/timothysagwe/grc-platform-1",
+		highlights: [
+			"Risk register with severity scoring and ownership tracking",
+			"Controls management mapped to compliance frameworks",
+			"Incident log with response workflow",
+			"Interactive dashboard with risk and compliance metrics",
+			"Export / Import data as JSON",
+		],
+	},
+];
+---
+
+<PageLayout meta={meta}>
+	<h1 class="title mb-8">Projects</h1>
+	<div class="space-y-12">
+		{
+			projects.map((project) => (
+				<article class="border-accent rounded-lg border p-6">
+					<div class="mb-4 flex flex-wrap items-start justify-between gap-4">
+						<h2 class="text-xl font-bold">{project.title}</h2>
+						{project.github && (
+							<a
+								class="cactus-link text-sm"
+								href={project.github}
+								rel="noreferrer"
+								target="_blank"
+							>
+								View on GitHub →
+							</a>
+						)}
+					</div>
+					<p class="mb-4 text-sm">{project.description}</p>
+					<ul class="mb-4 list-inside list-disc space-y-1 text-sm" role="list">
+						{project.highlights.map((h) => (
+							<li>{h}</li>
+						))}
+					</ul>
+					<div class="flex flex-wrap gap-2">
+						{project.tech.map((tag) => (
+							<span class="bg-accent/10 text-accent rounded px-2 py-0.5 text-xs font-medium">
+								{tag}
+							</span>
+						))}
+					</div>
+				</article>
+			))
+		}
+	</div>
+</PageLayout>

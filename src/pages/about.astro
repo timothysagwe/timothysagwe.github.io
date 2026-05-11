@@ -1,0 +1,75 @@
+---
+import PageLayout from "@/layouts/Base.astro";
+
+const meta = {
+	description: "GRC & Cybersecurity professional — about Timothy Sagwe.",
+	title: "About",
+};
+
+const skills = [
+	{
+		category: "Governance, Risk & Compliance",
+		items: ["ISO 27001", "NIST Cybersecurity Framework", "SOC 2", "Risk Register Management", "Control Implementation", "Compliance Monitoring"],
+	},
+	{
+		category: "Cybersecurity",
+		items: ["Threat & Vulnerability Assessment", "Incident Response", "Security Policy Development", "Access Control", "Security Awareness"],
+	},
+	{
+		category: "Tools & Technologies",
+		items: ["GRC Platforms", "SQL Server", "JavaScript", "HTML / CSS", "Git & GitHub"],
+	},
+];
+---
+
+<PageLayout meta={meta}>
+	<h1 class="title mb-8">About Me</h1>
+	<div class="prose prose-sm prose-cactus max-w-none">
+		<p>
+			I'm <strong>Timothy Sagwe</strong>, a GRC and Cybersecurity professional passionate about helping
+			organisations build resilient, compliant, and secure information environments.
+		</p>
+		<p>
+			My work centres on Governance, Risk, and Compliance — assessing organisational risk, implementing
+			security controls, and ensuring alignment with frameworks such as ISO 27001, the NIST
+			Cybersecurity Framework, and SOC 2. I enjoy bridging the gap between technical security
+			requirements and business objectives.
+		</p>
+		<p>
+			Outside of GRC, I build tools to make security and compliance work more efficient — including
+			web-based platforms for risk registers, control tracking, compliance checklists, and incident
+			management.
+		</p>
+
+		<h2 class="mt-10">Skills</h2>
+		{
+			skills.map((group) => (
+				<div class="mb-6">
+					<h3 class="text-accent mb-2 font-semibold">{group.category}</h3>
+					<ul class="list-inside list-disc" role="list">
+						{group.items.map((item) => (
+							<li>{item}</li>
+						))}
+					</ul>
+				</div>
+			))
+		}
+
+		<h2 class="mt-10">Contact</h2>
+		<p>
+			I'm open to collaboration, consulting, and new opportunities. Reach me at{" "}
+			<a class="cactus-link" href="mailto:timothy.sagwe100@gmail.com">
+				timothy.sagwe100@gmail.com
+			</a>{" "}
+			or find me on{" "}
+			<a
+				class="cactus-link"
+				href="https://github.com/timothysagwe"
+				rel="noreferrer"
+				target="_blank"
+			>
+				GitHub
+			</a>.
+		</p>
+	</div>
+</PageLayout>
